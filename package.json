@@ -1,0 +1,53 @@
+{
+  "name": "@devlegal/lwfrontend",
+  "description": "Frontend widget library for Live Widget project",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@devlegal/shared-ts": "0.0.1",
+    "openvidu-browser": "2.8.0",
+    "underscore": "1.9.1"
+  },
+  "devDependencies": {
+    "@types/underscore": "^1.9.1",
+    "@types/webrtc": "0.0.25",
+    "browserify": "^16.2.3",
+    "http-server": "^0.11.1",
+    "prettier": "^1.18.2",
+    "tsify": "^4.0.1",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.5",
+    "uglify-js": "^3.5.4"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "vchat-prod": "node browserify.js src/videochat/index.ts es5 | npx uglifyjs -c > dist/videochat_bundle.min.js",
+    "vchat-dev": "node browserify.js src/videochat/index.ts esnext > dist/videochat_bundle.js",
+    "prod": "node browserify.js src/index.ts es5 | npx uglifyjs -c > dist/bundle.js",
+    "dev": "node browserify.js src/demo.ts esnext > dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amulex/lwfrontend.git"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [],
+  "author": "Amulex devlegal team",
+  "license": "ISC",
+  "homepage": "https://github.com/amulex/lwfrontend#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

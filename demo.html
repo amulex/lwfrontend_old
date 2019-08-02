@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<button id="consultant">Run as consultant</button>
+<button id="answer" disabled>Answer the call</button>
+<button id="client">Run as client</button>
+<button id="call" disabled>Make a call</button>
+<button id="call-audio" disabled>Make an audio call</button>
+<button id="leave" disabled>Leave the call</button>
+<div id="chat">
+    <textarea placeholder="Send message..."></textarea>
+    <button>send</button>
+    <input type="file" multiple>
+    <div class="messages"></div>
+</div>
+<div>
+    <button class="mic toggle">Toggle mic</button>
+    <button class="sound toggle">Toggle sound</button>
+    <div id="publisher"><h3>You</h3></div>
+    <div id="subscriber"><h3>Others</h3></div>
+</div>
+<div class="widget-templates" hidden>
+    <div class="chat-message">
+        <div class="time"></div>
+        <div class="message"></div>
+    </div>
+    <div class="file-message">
+        <a download></a>
+    </div>
+    <button class="video toggle">Toggle video</button>
+</div>
+<script src="dist/bundle.js"></script>
+</body>
+</html>

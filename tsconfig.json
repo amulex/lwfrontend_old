@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "lib",
+    "declaration": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es6",
+      "es2015.promise",
+      "es2017",
+      "es2017.object"
+    ],
+    "baseUrl": ".",
+    "downlevelIteration": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    // Recommended: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#support-for-import-d-from-cjs-form-commonjs-modules-with---esmoduleinterop
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/demo.ts",
+    "src/videochat/**/*.ts"
+  ]
+}
